@@ -23,7 +23,11 @@ export class NovoUsuarioComponent implements OnInit {
     this.novoUsuarioForm = this.formBuild.group({
       email: ['', [Validators.required, Validators.email]],
       fullName: ['', [Validators.required, Validators.minLength(4)]],
-      userName: ['', [minusculoValidator],[this.usuarioExistenteService.usuarioJaExiste()]],
+      userName: [
+        '',
+        [minusculoValidator],
+        [this.usuarioExistenteService.usuarioJaExiste()],
+      ],
       password: [''],
     });
   }
